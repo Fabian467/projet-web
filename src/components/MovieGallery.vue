@@ -7,8 +7,8 @@
 
 <script>
 
-import getMovieData from '../api/movieRepository.js'
-import MovieCard from './components/MovieCard.vue'
+import getMovieData from '../api/movieRepository.js';
+import MovieCard from './MovieCard.vue';
 
 export default {
   name: 'MovieGallery',
