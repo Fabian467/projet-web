@@ -6,3 +6,5 @@ function getMovieData(){
 
     return Tableau_film;
 }
+
+console.log(getMovieData()[0].title)

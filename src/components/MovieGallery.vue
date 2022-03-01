@@ -27,8 +27,9 @@ export default {
 	},
 
   methods: {
-      async retrieveMovieData() {
-          this.MovieData = await getMovieData()
+       retrieveMovieData() {
+          this.MovieData =  getMovieData()
+          console.log(this.MovieData)
       }
   }
 }
