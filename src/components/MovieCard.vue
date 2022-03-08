@@ -3,7 +3,7 @@
      <img class="picture"/>{{picture}}
     <div>
         <h2 class = "title">{{title}}</h2>
-        <p2 class = "description">{{description}}</p2>
+        <p class = "description">{{description}}</p>
     </div>
   </div>
 </template>
@@ -32,5 +32,10 @@ export default {
 h2 {
   position: relative;
   font-size: 20 px;
+}
+
+p {
+  position:relative;
+  font-size:10 px;
 }
 </style>

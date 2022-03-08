@@ -1,7 +1,12 @@
 <template>
     <div class="movie-gallery">
-		<MovieCard :title="MovieData[0].title" :description="MovieData[0].description" :picture="MovieData[0].picture"/>
-</div>
+      <MovieCard
+      v-for="movie in MovieData"
+        :key="movie.id"
+        :title="movie.title"
+        :description="movie.description"
+        :picture="movie.picture"/>
+    </div>
 </template>
 
 
@@ -14,21 +19,22 @@ export default {
   name: 'MovieGallery',
 
   components: {
-      MovieCard,
+      MovieCard
   },
-    data() {
-        return {
-            MovieData: []
-        }
-    },
+
+  data() {
+      return {
+          MovieData: []
+      }
+  },
 
     created: function() {
 		this.retrieveMovieData()
 	},
 
   methods: {
-       retrieveMovieData() {
-          this.MovieData =  getMovieData()
+       async retrieveMovieData() {
+          this.MovieData = getMovieData()
           console.log(this.MovieData)
       }
   }
@@ -36,6 +42,6 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 
 </style>
