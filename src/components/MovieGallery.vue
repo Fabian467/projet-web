@@ -43,5 +43,10 @@ export default {
 
 
 <style>
-
+.movie-gallery {
+  position: absolute;
+  margin-top: 50%;
+  margin-left: 50%;
+  display: flex;
+}
 </style>

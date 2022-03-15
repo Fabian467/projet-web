@@ -2,6 +2,7 @@
  <div class = "movie-card">
     <div>
         <h2 class = "title">{{title}}</h2>
+        <h3 class = original_title>{{original_title}} </h3>
         <p class = "date">{{date}}</p>
     </div>
   </div>
@@ -29,6 +30,11 @@ export default {
 }
 
 h2 {
+  position: relative;
+  font-size: 20 px;
+}
+
+h3 {
   position: relative;
   font-size: 20 px;
 }
