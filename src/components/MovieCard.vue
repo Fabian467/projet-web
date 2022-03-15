@@ -1,9 +1,8 @@
 <template>
  <div class = "movie-card">
-     <img class="picture"/>{{picture}}
     <div>
         <h2 class = "title">{{title}}</h2>
-        <p class = "description">{{description}}</p>
+        <p class = "date">{{date}}</p>
     </div>
   </div>
 </template>
@@ -13,9 +12,9 @@
 export default {
   name: 'MovieCard',
   props: {
-      title: {type: String, required: true, default : 'Princesse Mononoke'},
-      description: String,
-      picture: String,
+      title: {type: String, required: true},
+      original_title :{type: String, required: true},
+      date : {type: Number, required: true},
   }
 }
 </script>

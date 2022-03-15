@@ -4,8 +4,8 @@
       v-for="movie in MovieData"
         :key="movie.id"
         :title="movie.title"
-        :description="movie.description"
-        :picture="movie.picture"/>
+        :original_title="movie.original_title"
+        :date="movie.date"/>
     </div>
 </template>
 
