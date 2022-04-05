@@ -1,11 +1,14 @@
 <template>
 <div>
+  
   <div class="logo">
     <Logo/>
   </div>
+
   <div class="movie-gallery">
     <MovieGallery/>
-</div>
+  </div>
+
 </div>
 </template>
 
@@ -22,4 +25,9 @@ export default {
   },
 }
 </script>
-<style></style>
+
+<style>
+body{
+  background-color:cornflowerblue;
+}
+</style>

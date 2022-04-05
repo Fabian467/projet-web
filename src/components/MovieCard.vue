@@ -2,8 +2,9 @@
  <div class = "movie-card">
     <div>
         <h2 class = "title">{{title}}</h2>
-        <h3 class = original_title>{{original_title}} </h3>
-        <p class = "date">{{date}}</p>
+        <h3 class = "original_title">{{original_title}} </h3>
+        <h3 class = "date">{{date}}</h3>
+        <img v-bind:src = "image">
     </div>
   </div>
 </template>
@@ -15,32 +16,37 @@ export default {
   props: {
       title: {type: String, required: true},
       original_title :{type: String, required: true},
-      date : {type: Number, required: true},
+      date : {type: String, required: true},
+      image : {type: String, required: true},
   }
 }
 </script>
 
 
-<style scoped>
+<style>
 .movie-card {
-  position: absolute;
-  margin-top: 50%;
-  margin-left: 50%;
-  display: flex;
+  width: 23vw;
+  height: auto;
 }
 
 h2 {
-  position: relative;
-  font-size: 20 px;
+  font-size: 10 vw;
+  font-family: 'Steelfish Rg', 'helvetica neue',
+                  helvetica, arial, sans-serif;
 }
 
 h3 {
-  position: relative;
   font-size: 20 px;
 }
 
-p {
-  position:relative;
-  font-size:10 px;
+div{
+  width: 100%;
+  height: auto;
+  }
+
+img{
+  width:80%;
+  height:auto;
 }
+
 </style>

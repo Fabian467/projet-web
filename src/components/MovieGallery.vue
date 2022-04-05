@@ -5,7 +5,8 @@
         :key="movie.id"
         :title="movie.title"
         :original_title="movie.original_title"
-        :date="movie.date"/>
+        :date="movie.release_date"
+        :image= "movie.image"/>
     </div>
 </template>
 
@@ -34,7 +35,7 @@ export default {
 
   methods: {
        async retrieveMovieData() {
-          this.MovieData = getMovieData()
+          this.MovieData = await getMovieData()
           console.log(this.MovieData)
       }
   }
@@ -42,11 +43,25 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 .movie-gallery {
-  position: absolute;
-  margin-top: 50%;
-  margin-left: 50%;
-  display: flex;
+  display:flex;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  position:absolute;
+  width: 94vw;
+  margin-left: 3vw;
+  margin-top: 40%;
 }
+
+body{
+  background-color: beige;
+}
+
+/* div{
+  width: 100vw;
+  height: auto;
+  } */
 </style>

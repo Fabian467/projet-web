@@ -1,11 +1,9 @@
 <template>
-<div>
-  <div id="app">
+  <div id="logo">
     <img alt="Ghibli logo" src="../assets/logo.png">
-    <p> Ghibli 
+    <!-- <p> Ghibli 
       Carousel
-      </p>
-  </div>
+      </p> -->
 </div>
 </template>
 
@@ -16,12 +14,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+.logo {
+  width: 100%;
+  height: 100%;
+}
 img{
-  
-  width: 50%;
-  height: 50%;
-  margin:auto;
+  width: 80%;
+  height: auto;
   position: absolute;
 }
 
@@ -36,9 +37,5 @@ p {
             helvetica, arial, sans-serif;
   font-weight: 800;
   -webkit-font-smoothing: antialiased;
-}
-
-body {
-  background-color: rgb(0, 180, 180);
 }
 </style>
