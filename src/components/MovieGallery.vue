@@ -1,5 +1,16 @@
 <template>
     <div class="movie-gallery">
+      <div class="gallery-options">
+        <input type="text" v-model="search" placeholder="Search a movie">
+        <label for="dog-sort">Trier par : </label>
+        <select v-model="moviesSortType" id="movie-sort">
+          <option value="AZName">Noms de A à Z</option>
+          <option value="ZAName">Noms de Z à A</option>
+          <option value="Croissant">Films triés par années dans l'ordre croissant</option>
+          <option value="Décroissant">Films triés par années dans l'ordre décroissant</option>
+        </select>
+      </div>
+      <div class="gallery">
       <MovieCard
       v-for="movie in MovieData"
         :key="movie.id"
@@ -7,6 +18,7 @@
         :original_title="movie.original_title"
         :date="movie.release_date"
         :image= "movie.image"/>
+        </div>
     </div>
 </template>
 
@@ -25,7 +37,9 @@ export default {
 
   data() {
       return {
-          MovieData: []
+          MovieData: [],
+          search: "",
+          moviesSortType: "Croissant",
       }
   },
 
@@ -44,8 +58,11 @@ export default {
 
 
 <style scoped>
-.movie-gallery {
+
+
+.gallery {
   display:flex;
+  gap: 20px;
   row-gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
@@ -56,12 +73,11 @@ export default {
   margin-top: 40%;
 }
 
+.gallery-options {
+  display: flex;
+}
+
 body{
   background-color: beige;
 }
-
-/* div{
-  width: 100vw;
-  height: auto;
-  } */
 </style>

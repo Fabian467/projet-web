@@ -24,6 +24,7 @@ img{
   width: 80%;
   height: auto;
   position: absolute;
+  z-index: -1;
 }
 
 p {

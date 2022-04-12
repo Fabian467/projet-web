@@ -27,6 +27,11 @@ export default {
 .movie-card {
   width: 23vw;
   height: auto;
+  padding: 30px;
+  background-color: rgb(100, 100, 241);
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
 }
 
 h2 {
@@ -48,5 +53,7 @@ img{
   width:80%;
   height:auto;
 }
+
+
 
 </style>
