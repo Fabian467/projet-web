@@ -4,15 +4,15 @@
         <input type="text" v-model="search" placeholder="Search a movie">
         <label for="dog-sort">Trier par : </label>
         <select v-model="moviesSortType" id="movie-sort">
-          <option value="AZName">Noms de A à Z</option>
-          <option value="ZAName">Noms de Z à A</option>
+          <option value="AZTitle">Noms de A à Z</option>
+          <option value="ZATitle">Noms de Z à A</option>
           <option value="Croissant">Films triés par années dans l'ordre croissant</option>
           <option value="Décroissant">Films triés par années dans l'ordre décroissant</option>
         </select>
       </div>
       <div class="gallery">
       <MovieCard
-      v-for="movie in MovieData"
+      v-for="movie in MovieOrganizedData"
         :key="movie.id"
         :title="movie.title"
         :original_title="movie.original_title"
@@ -30,6 +30,19 @@ import MovieCard from './MovieCard.vue';
 
 export default {
   name: 'MovieGallery',
+  
+  computed: {
+    MovieOrganizedData: function() {
+      const field = ["AZTitle", "ZATitle"].includes(this.moviesSortType) ? "title" : "release_date"
+      const reversed = ["ZATitle", "Décroissant"].includes(this.moviesSortType)
+      const filterFunc = (a) => a.title.toLowerCase().includes(this.search.toLowerCase())
+      const comparator = (a, b) => a[field].localeCompare(b[field])
+      let data = this.MovieData.filter(filterFunc)
+      data = data.sort(comparator)
+      if (reversed) data = data.reverse()
+      return data
+    }
+  },
 
   components: {
       MovieCard
