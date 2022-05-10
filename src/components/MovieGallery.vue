@@ -51,8 +51,8 @@ export default {
   data() {
       return {
           MovieData: [],
-          search: "",
-          moviesSortType: "Croissant",
+          search: sessionStorage.getItem("search") || "",
+          moviesSortType: sessionStorage.getItem("moviesSortType") || "Croissant",
       }
   },
 
@@ -65,6 +65,15 @@ export default {
           this.MovieData = await getMovieData()
           console.log(this.MovieData)
       }
+  },
+
+  watch: {
+    search: function(newSearch) {
+      sessionStorage.setItem("search", newSearch)
+    },
+    moviesSortType: function(newMovieSortType) {
+      sessionStorage.setItem("moviesSortType", newMovieSortType)
+    }
   }
 }
 </script>
