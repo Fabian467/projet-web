@@ -8,7 +8,6 @@
   <div class="movie-gallery">
     <MovieGallery/>
   </div>
-
 </div>
 </template>
 
@@ -17,11 +16,12 @@
 import Logo from './components/Logo.vue'
 import MovieGallery from './components/MovieGallery.vue'
 
+
 export default {
   name: 'GhibliGallery',
   components: {
     Logo,
-    MovieGallery
+    MovieGallery,
   },
 }
 </script>
