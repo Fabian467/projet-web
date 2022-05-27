@@ -81,11 +81,11 @@ export default {
 
 <style scoped>
 
-
-.gallery {
+@media (min-width: 0px) {
+  .gallery {
   display:flex;
-  gap: 20px;
-  row-gap: 20px;
+  gap: 4%;
+  row-gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-between;
@@ -95,11 +95,13 @@ export default {
   margin-top: 40%;
 }
 
-.gallery-options {
-  display: flex;
+.movie-sort{
+  max-width: 20 px;
 }
 
 body{
   background-color: beige;
 }
+}
+
 </style>

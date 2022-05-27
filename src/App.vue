@@ -28,6 +28,6 @@ export default {
 
 <style>
 body{
-  background-color:cornflowerblue;
+  background-color:rgba(100, 148, 237, 0.779);
 }
 </style>
